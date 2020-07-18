@@ -5,7 +5,7 @@ import Config from 'react-native-config'
 export const getBooks=()=>{
     return async dispatch=>{
         try {
-       const response= await Axios.get("http://192.168.43.133:3000/books");
+       const response= await Axios.get(Config.REACT_APP_BASE_URL);
        response.status===200?
             dispatch(storeBooks(response.data)):dispatch()
         } catch (error) {
